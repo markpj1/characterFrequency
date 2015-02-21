@@ -26,3 +26,21 @@
  *
  *  
  */
+
+var characterFrequency = function(inputStr) {
+  var result = [],
+      charCounts = {};
+
+  for (var i=0; i<inputStr.length; i++) {
+    charCounts[inputStr[i]] = charCounts[inputStr[i]] ? charCounts[inputStr[i]]+1 : 1;
+  }
+  console.log(charCounts);
+
+  for (key in charCounts) {
+    charPair = [];
+    charPair[0] = key;
+    charPair[1] = charCounts[key];
+    result.push(charPair);
+  }
+  return result;
+}
